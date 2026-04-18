@@ -1,12 +1,9 @@
 # NEXUS — AI Crypto Intelligence Dashboard
 
 > Real-time cryptocurrency analytics powered by Binance WebSocket streams, CoinGecko REST API, and AI-driven technical analysis.
-
-![Dashboard Preview](./public/preview.png)
-
 ---
 
-## 🚀 Features
+##  Features
 
 ### Real-Time Data
 - **Binance WebSocket** — live price streaming for 15+ coins with instant UI updates
@@ -59,43 +56,6 @@
 | HTTP Client   | Axios                               |
 | Icons         | Lucide React                        |
 | Fonts         | Bebas Neue · JetBrains Mono · Outfit|
-
----
-
-## ⚡ Getting Started
-
-### 1. Clone & Install
-
-```bash
-git clone https://github.com/YOUR_USERNAME/nexus-ai-crypto.git
-cd nexus-ai-crypto
-npm install
-```
-
-### 2. Environment Variables
-
-```bash
-cp .env.local.example .env.local
-```
-
-Edit `.env.local`:
-```env
-NEXT_PUBLIC_COINGECKO_BASE=https://api.coingecko.com/api/v3
-COINGECKO_API_KEY=          # Optional — get free key at coingecko.com/en/api
-NEXT_PUBLIC_BINANCE_WS=wss://stream.binance.com:9443/ws
-NEXT_PUBLIC_APP_URL=http://localhost:3000
-```
-
-> **Note:** The CoinGecko API key is optional for the free tier but helps avoid rate limits.
-> The Binance WebSocket requires **no API key** — it uses public streams.
-
-### 3. Run Development Server
-
-```bash
-npm run dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) — redirects to the dashboard.
 
 ---
 
@@ -155,37 +115,6 @@ nexus-ai-crypto/
 └── styles/
     └── globals.css             # Tailwind + custom CSS (ticker, skeleton, flash)
 ```
-
----
-
-## 🌐 Deployment (Vercel)
-
-### 1. Push to GitHub
-
-```bash
-git init
-git add .
-git commit -m "feat: NEXUS AI crypto dashboard with real-time WebSocket data"
-git branch -M main
-git remote add origin https://github.com/YOUR_USERNAME/nexus-ai-crypto.git
-git push -u origin main
-```
-
-### 2. Import to Vercel
-
-1. Go to [vercel.com](https://vercel.com) → **New Project**
-2. Import your GitHub repo
-3. Framework preset: **Next.js** (auto-detected)
-4. Add environment variables:
-   - `NEXT_PUBLIC_COINGECKO_BASE` → `https://api.coingecko.com/api/v3`
-   - `COINGECKO_API_KEY` → your key (optional)
-   - `NEXT_PUBLIC_BINANCE_WS` → `wss://stream.binance.com:9443/ws`
-5. Click **Deploy**
-
-### 3. WebSocket in Production
-
-Binance's public WebSocket streams work from the browser directly — no server-side proxy needed. The connection is made client-side using `wss://stream.binance.com:9443/ws` which is CORS-unrestricted.
-
 ---
 
 ## 🔌 Data Flow
@@ -226,17 +155,6 @@ The AI analysis is powered by classic technical analysis — no external AI API 
 | Signal      | Combination of RSI + MA crossover           |
 | Risk Score  | Weighted volatility + 24h price swing       |
 | Prediction  | Linear regression on 7D prices × 0.5 factor|
-
----
-
-## 📸 Screenshots
-
-| Page | Description |
-|------|-------------|
-| `/dashboard` | Live market overview with charts and trending |
-| `/portfolio` | Holdings tracker with live P&L |
-| `/coins` | Full market table with search |
-| `/insights` | AI signal analysis across top 10 coins |
 
 ---
 
