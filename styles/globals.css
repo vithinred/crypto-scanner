@@ -1,0 +1,120 @@
+/* styles/globals.css */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=JetBrains+Mono:wght@400;700&family=Outfit:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-bebas:      'Bebas Neue', cursive;
+  --font-jetbrains:  'JetBrains Mono', monospace;
+  --font-outfit:     'Outfit', sans-serif;
+  --neon:   #00ffa3;
+  --cyan:   #00c6ff;
+  --pink:   #ff3e7f;
+  --gold:   #ffd166;
+  --bg:     #03050a;
+  --muted:  #4a5268;
+  --text:   #dde2ee;
+  --border: rgba(255,255,255,0.065);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0,255,163,0.2) transparent;
+}
+
+::-webkit-scrollbar { width: 4px; height: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(0,255,163,0.2); border-radius: 2px; }
+
+body {
+  background: #03050a;
+  color: #dde2ee;
+  font-family: var(--font-outfit);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Grid overlay */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(0,255,163,.008) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,255,163,.008) 1px, transparent 1px);
+  background-size: 64px 64px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Neon glow utilities */
+.glow-neon  { text-shadow: 0 0 20px rgba(0,255,163,.6), 0 0 40px rgba(0,255,163,.3); }
+.glow-cyan  { text-shadow: 0 0 20px rgba(0,198,255,.6); }
+.glow-pink  { text-shadow: 0 0 20px rgba(255,62,127,.6); }
+.border-neon { border-color: rgba(0,255,163,.2); }
+
+/* Glass card */
+.glass {
+  background: rgba(255,255,255,0.032);
+  border: 1px solid rgba(255,255,255,0.065);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* Shimmer skeleton */
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    rgba(255,255,255,.04) 25%,
+    rgba(255,255,255,.08) 50%,
+    rgba(255,255,255,.04) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+@keyframes shimmer {
+  from { background-position: 200% 0; }
+  to   { background-position: -200% 0; }
+}
+
+/* Price flash animations */
+@keyframes flash-up {
+  0%,100% { color: inherit; }
+  50%      { color: #00ffa3; text-shadow: 0 0 12px rgba(0,255,163,.8); }
+}
+@keyframes flash-down {
+  0%,100% { color: inherit; }
+  50%      { color: #ff3e7f; text-shadow: 0 0 12px rgba(255,62,127,.8); }
+}
+.flash-up   { animation: flash-up   0.6s ease; }
+.flash-down { animation: flash-down 0.6s ease; }
+
+/* Ticker tape */
+.ticker-container { overflow: hidden; }
+.ticker-track {
+  display: flex;
+  gap: 48px;
+  animation: ticker 45s linear infinite;
+  white-space: nowrap;
+}
+.ticker-track:hover { animation-play-state: paused; }
+@keyframes ticker {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* Recharts overrides */
+.recharts-cartesian-grid-horizontal line,
+.recharts-cartesian-grid-vertical line {
+  stroke: rgba(255,255,255,.04) !important;
+}
+.recharts-tooltip-wrapper { outline: none !important; }
