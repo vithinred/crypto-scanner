@@ -41,7 +41,7 @@
 
 ---
 
-## 🛠 Tech Stack
+## Tech Stack
 
 | Layer         | Technology                          |
 |---------------|-------------------------------------|
@@ -59,7 +59,7 @@
 
 ---
 
-## 📁 Project Structure
+##  Project Structure
 
 ```
 nexus-ai-crypto/
@@ -117,7 +117,7 @@ nexus-ai-crypto/
 ```
 ---
 
-## 🔌 Data Flow
+## Data Flow
 
 ```
 Browser
@@ -142,7 +142,7 @@ Browser
 
 ---
 
-## 🤖 AI Engine Details
+## AI Engine Details
 
 The AI analysis is powered by classic technical analysis — no external AI API required:
 
@@ -158,7 +158,7 @@ The AI analysis is powered by classic technical analysis — no external AI API 
 
 ---
 
-## 📄 License
+## License
 
 MIT — free to use, modify, and showcase in your portfolio.
 
